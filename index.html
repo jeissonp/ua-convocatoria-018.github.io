@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: Plan Pedagógico - Administración de Bases de Datos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D1B2A;
+            color: #E0E1DD;
+            overflow: hidden; /* Prevent scrolling, as it's a slide-based presentation */
+        }
+        .slide-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Make each slide take full viewport height */
+            padding: 2rem;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Disable interaction when hidden */
+        }
+        .slide-container.active {
+            opacity: 1;
+            transform: scale(1);
+            position: relative;
+            pointer-events: auto; /* Enable interaction when active */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .text-accent-1 { color: #1EE3CF; }
+        .bg-accent-1 { background-color: #1EE3CF; }
+        .text-accent-2 { color: #778DA9; }
+        .bg-accent-2 { background-color: #415A77; }
+        .bg-card { background-color: #1B263B; }
+        .border-accent { border-color: #415A77; }
+        .gradient-text {
+            background: linear-gradient(90deg, #1EE3CF, #A450E8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .navigation-controls {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="slideshow-container" class="relative w-full h-screen overflow-hidden">
+
+        <!-- Slide 1: Header -->
+        <div class="slide-container active" id="slide-0">
+            <header class="text-center w-full max-w-4xl mx-auto">
+                <h2 class="text-lg md:text-xl font-semibold text-accent-1">Plan Pedagógico</h2>
+                <h1 class="text-4xl md:text-6xl font-black mt-2 gradient-text">Administración de Bases de Datos</h1>
+                <p class="text-lg text-accent-2 mt-4">Código: 72030704 | Programa: Ingeniería de Sistemas</p>
+                <p class="text-xl md:text-2xl font-semibold text-accent-1 mt-6">Jeisson Perez Molano</p>
+                <p class="text-md text-accent-2">Candidato Docente Universitario</p>
+            </header>
+        </div>
+
+        <!-- Slide 2: Perfil del Candidato -->
+        <div class="slide-container" id="slide-1">
+            <section id="perfil" class="w-full max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Perfil del Candidato</h2>
+                <div class="bg-card border border-accent rounded-xl p-6 md:p-8 shadow-2xl">
+                    <p class="text-md md:text-lg leading-relaxed mb-6">
+                        Ingeniero de Sistemas, Especialista en Desarrollo de Bases de Datos; Senior con 12 años de experiencia con capacidad para desarrollar sistemas de información orientados a web, diseñador de bases de datos y analista de sistemas.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-accent-1 mb-3">Educación</h3>
+                            <ul class="list-disc list-inside space-y-1 text-accent-2">
+                                <li>**Especialista en Desarrollo de Base de Datos:** UNIVERSIDAD DE BOGOTÁ, JORGE TADEO LOZANO (2012)</li>
+                                <li>**Ingeniero de Sistemas:** UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS en Convenio con la UNIVERSIDAD DE LA AMAZONIA (2007)</li>
+                            </ul>
+
+                            <h3 class="text-xl font-bold text-accent-1 mt-6 mb-3">Experiencia Clave</h3>
+                            <ul class="list-disc list-inside space-y-1 text-accent-2">
+                                <li>**Líder Backend:** Serempre SAS (Sep 2017 - Actualidad) - Python (Django, Flask), PHP (Drupal, Laravel), Firebase, SQL.</li>
+                                <li>**Líder Backend:** WiseWare SAS (Jun 2013 - Jun 2017) - Python (Django, Flask), PHP (Drupal, Laravel), Firebase, SQL.</li>
+                                <li>**Ingeniero de Desarrollo:** IMAGINAMOS SAS (Sep 2012 - Dic 2012) - Drupal 7.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-accent-1 mb-3">Conocimientos Técnicos</h3>
+                            <ul class="list-disc list-inside space-y-1 text-accent-2">
+                                <li>**Backend:** Python (Django, Flask), PHP (Drupal 7-10, Laravel).</li>
+                                <li>**Bases de Datos:** SQL, Firebase.</li>
+                                <li>**Frontend/Runtime:** JavaScript (jQuery, Nodejs, Strapi).</li>
+                                <li>**DevOps:** UNIX (Devops).</li>
+                            </ul>
+
+                            <h3 class="text-xl font-bold text-accent-1 mt-6 mb-3">Certificaciones</h3>
+                            <ul class="list-disc list-inside space-y-1 text-accent-2">
+                                <li>PHP, W3School (Jun 2022)</li>
+                                <li>AWS Partner: Accreditation (Technical) (Nov 2023)</li>
+                                <li>AWS Partner: Cloud Economics Accreditation (Nov 2023)</li>
+                            </ul>
+                            <h3 class="text-xl font-bold text-accent-1 mt-6 mb-3">Idiomas</h3>
+                            <ul class="list-disc list-inside space-y-1 text-accent-2">
+                                <li>Español (Nativo)</li>
+                                <li>Inglés (Básico)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 3: Competencia General del Curso -->
+        <div class="slide-container" id="slide-2">
+            <section id="competencia" class="w-full max-w-4xl mx-auto">
+                <div class="bg-card border border-accent rounded-xl p-6 md:p-8 text-center shadow-2xl">
+                    <h3 class="text-2xl md:text-3xl font-bold text-accent-1 mb-4">Competencia General del Curso</h3>
+                    <p class="text-md md:text-lg leading-relaxed">
+                        Implementar bases de datos mediante herramientas incorporadas en un Sistema Gestor de Bases de Datos, manteniendo la integridad de los datos de acuerdo a los parámetros de calidad para el control de concurrencia, gestión de transacciones, seguridad y respaldo de datos.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 4: Overview (Carga Horaria, Créditos, Distribución del Trabajo - Chart) -->
+        <div class="slide-container" id="slide-3">
+            <section id="overview" class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1 bg-card border border-accent rounded-xl p-6 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Carga Horaria Total</h3>
+                    <p class="text-6xl font-black gradient-text">192</p>
+                    <p class="text-accent-2">Horas Semestrales</p>
+                </div>
+                <div class="md:col-span-1 bg-card border border-accent rounded-xl p-6 text-center">
+                    <h3 class="text-2xl font-bold mb-4">Créditos Académicos</h3>
+                    <p class="text-6xl font-black gradient-text">4</p>
+                    <p class="text-accent-2">Créditos</p>
+                </div>
+                <div class="md:col-span-1 bg-card border border-accent rounded-xl p-6">
+                    <h3 class="text-2xl font-bold text-center mb-4">Distribución del Trabajo</h3>
+                    <div class="chart-container" style="height: 200px;">
+                        <canvas id="hoursDistributionChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 5: Metodología: Acompañamiento Directo (AD) -->
+        <div class="slide-container" id="slide-4">
+            <section id="metodologia-ad" class="w-full max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Nuestra Aproximación Pedagógica</h2>
+                <div class="bg-card border border-accent rounded-xl p-6">
+                    <h3 class="text-2xl font-bold text-accent-1 mb-4">👨‍🏫 Acompañamiento Directo (AD)</h3>
+                    <p class="mb-4 text-accent-2">Actividades fundamentales para el desarrollo de las clases, estimulando la participación activa y la verificación del aprendizaje.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Exposiciones cortas y Clase Magistral</li>
+                        <li>Análisis y estudios de casos prácticos</li>
+                        <li>Aplicaciones a casos reales</li>
+                        <li>Desarrollo de prácticas guiadas en clase</li>
+                        <li>Asesorías personalizadas</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 6: Metodología: Trabajo Independiente (TI) -->
+        <div class="slide-container" id="slide-5">
+            <section id="metodologia-ti" class="w-full max-w-3xl mx-auto">
+                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Nuestra Aproximación Pedagógica</h2>
+                <div class="bg-card border border-accent rounded-xl p-6">
+                    <h3 class="text-2xl font-bold text-accent-1 mb-4">📚 Trabajo Independiente (TI)</h3>
+                    <p class="mb-4 text-accent-2">Actividades que afianzan el aprendizaje significativo y promueven la autonomía del estudiante en la aplicación de conocimientos.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Consultas de temas especializados</li>
+                        <li>Desarrollo de talleres prácticos</li>
+                        <li>Análisis y solución de casos</li>
+                        <li>Manejo de herramientas SGBD</li>
+                        <li>Desarrollo del proyecto final de clase</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Slide 7: Recorrido por las Unidades (Chart) -->
+        <div class="slide-container" id="slide-6">
+            <section id="unidades-chart" class="w-full max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Recorrido por las Unidades del Programa</h2>
+                <div class="bg-card border border-accent rounded-xl p-6 md:p-8">
+                    <h3 class="text-xl md:text-2xl font-bold text-center mb-4">Distribución de Horas por Unidad</h3>
+                    <div class="chart-container">
+                        <canvas id="unitHoursChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 8: Unidad 1 -->
+        <div class="slide-container" id="slide-7">
+            <section id="unidad-1" class="w-full max-w-3xl mx-auto">
+                <div class="bg-card border border-accent rounded-xl p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-accent-1 unit-title">Unidad 1: Almacenamiento y Acceso</h3>
+                    <p class="text-sm text-accent-2 mb-4 unit-time">(Semanas 1-2 | 22 Horas)</p>
+                    <p class="flex-grow unit-description">Organización de estructuras lógicas, índices y optimización de consultas SQL para un acceso eficiente a la información.</p>
+                    <h4 class="text-lg font-bold text-accent-1 mt-4 mb-2">Resultados de Aprendizaje:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-accent-2">
+                        <li>Planea, diseña e implementa la organización del almacenamiento en disco y la construcción de índices.</li>
+                        <li>Identifica y usa las tareas de procesamiento y de optimización de consultas realizadas por un SGBD.</li>
+                        <li>Implementa consultas de acuerdo con estrategias de procesamiento y optimización, utilizando lenguaje SQL.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 9: Unidad 2 -->
+        <div class="slide-container" id="slide-8">
+            <section id="unidad-2" class="w-full max-w-3xl mx-auto">
+                <div class="bg-card border border-accent rounded-xl p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-accent-1 unit-title">Unidad 2: Gestión de Transacciones</h3>
+                    <p class="text-sm text-accent-2 mb-4 unit-time">(Semanas 3-8 | 66 Horas)</p>
+                    <p class="flex-grow unit-description">Aplicación de propiedades ACID, control de concurrencia y programación procedural (PL/SQL) para garantizar la consistencia y automatizar tareas.</p>
+                    <h4 class="text-lg font-bold text-accent-1 mt-4 mb-2">Resultados de Aprendizaje:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-accent-2">
+                        <li>Aplica transacciones para garantizar la consistencia de la base de datos.</li>
+                        <li>Implementa procedimientos almacenados y disparadores en la base de datos creada.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 10: Unidad 3 -->
+        <div class="slide-container" id="slide-9">
+            <section id="unidad-3" class="w-full max-w-3xl mx-auto">
+                <div class="bg-card border border-accent rounded-xl p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-accent-1 unit-title">Unidad 3: Seguridad y Restauración</h3>
+                    <p class="text-sm text-accent-2 mb-4 unit-time">(Semanas 9-13 | 55 Horas)</p>
+                    <p class="flex-grow unit-description">Implementación de métodos de control de acceso, auditorías y estrategias de respaldo y recuperación para proteger los datos.</p>
+                    <h4 class="text-lg font-bold text-accent-1 mt-4 mb-2">Resultados de Aprendizaje:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-accent-2">
+                        <li>Conoce y usa las herramientas y funciones para el manejo de seguridad en un SGBD.</li>
+                        <li>Establece estrategias para desarrollar el respaldo y recuperación de datos.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 11: Unidad 4 -->
+        <div class="slide-container" id="slide-10">
+            <section id="unidad-4" class="w-full max-w-3xl mx-auto">
+                <div class="bg-card border border-accent rounded-xl p-6 flex flex-col">
+                    <h3 class="text-xl font-bold text-accent-1 unit-title">Unidad 4: NoSQL</h3>
+                    <p class="text-sm text-accent-2 mb-4 unit-time">(Semanas 14-15 | 22 Horas)</p>
+                    <p class="flex-grow unit-description">Exploración de bases de datos no relacionales, con foco en sistemas orientados a documentos como MongoDB.</p>
+                    <h4 class="text-lg font-bold text-accent-1 mt-4 mb-2">Resultados de Aprendizaje:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-accent-2">
+                        <li>Conoce las características principales y el funcionamiento de un producto NoSQL.</li>
+                        <li>Diseña un modelo de datos a partir de una situación real, estableciendo cada una de los conceptos desarrollados en la asignatura.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 12: Unidad 5 -->
+        <div class="slide-container" id="slide-11">
+            <section id="unidad-5" class="w-full max-w-3xl mx-auto">
+                 <div class="bg-card border-2 border-accent-1 rounded-xl p-6 flex flex-col shadow-2xl">
+                    <h3 class="text-xl font-bold text-accent-1 unit-title">Unidad 5: Proyecto Final de Clase</h3>
+                    <p class="text-sm text-accent-2 mb-4 unit-time">(Semana 16 | 27 Horas)</p>
+                    <p class="flex-grow unit-description">Aplicación integral de todos los conceptos del curso en el desarrollo de una base de datos completa, desde el diseño hasta la implementación y protección.</p>
+                    <h4 class="text-lg font-bold text-accent-1 mt-4 mb-2">Resultados de Aprendizaje:</h4>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-accent-2">
+                        <li>Desarrolla una base de datos, aplicando los conceptos vistos en clase, siguiendo los parámetros solicitados.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 13: Estrategias de Evaluación -->
+        <div class="slide-container" id="slide-12">
+            <section id="evaluacion" class="w-full max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Estrategias de Evaluación</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-accent-2">La evaluación es un proceso continuo y diversificado, diseñado para medir el desarrollo progresivo de las competencias del estudiante a través de múltiples evidencias de aprendizaje.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-card border border-accent rounded-xl p-6 text-center">
+                        <p class="text-4xl mb-2">📝</p>
+                        <h3 class="text-lg font-bold">Talleres y Ejercicios</h3>
+                        <p class="text-sm text-accent-2">Desarrollo de códigos y resolución de problemas en clase.</p>
+                    </div>
+                    <div class="bg-card border border-accent rounded-xl p-6 text-center">
+                        <p class="text-4xl mb-2">🧠</p>
+                        <h3 class="text-lg font-bold">Parciales y Exámenes</h3>
+                        <p class="text-sm text-accent-2">Evaluaciones escritas para verificar la comprensión teórica y práctica.</p>
+                    </div>
+                     <div class="bg-card border border-accent rounded-xl p-6 text-center">
+                        <p class="text-4xl mb-2">🗣️</p>
+                        <h3 class="text-lg font-bold">Participación Activa</h3>
+                         <p class="text-sm text-accent-2">Preguntas, debates y contribuciones durante las clases.</p>
+                    </div>
+                    <div class="bg-card border-2 border-accent-1 rounded-xl p-6 text-center">
+                        <p class="text-4xl mb-2">🏆</p>
+                        <h3 class="text-lg font-bold text-accent-1">Proyecto Final y Sustentación</h3>
+                        <p class="text-sm text-accent-2">La evidencia principal del logro de la competencia general.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Slide 14: Entregables del Proyecto Final -->
+        <div class="slide-container" id="slide-13">
+            <section id="proyecto-final" class="w-full max-w-4xl mx-auto">
+                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Entregables del Proyecto Final</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-card border border-accent rounded-xl p-6">
+                        <h3 class="font-bold text-lg">📄 Modelo Relacional</h3>
+                        <p class="text-sm text-accent-2">Diseño conceptual y lógico de la base de datos.</p>
+                    </div>
+                     <div class="bg-card border border-accent rounded-xl p-6">
+                        <h3 class="font-bold text-lg">📖 Diccionario de Datos</h3>
+                        <p class="text-sm text-accent-2">Documentación detallada de todas las tablas y atributos.</p>
+                    </div>
+                     <div class="bg-card border border-accent rounded-xl p-6">
+                        <h3 class="font-bold text-lg">⚙️ Modelo Físico</h3>
+                        <p class="text-sm text-accent-2">Implementación de tablas, vistas, triggers y procedimientos.</p>
+                    </div>
+                     <div class="bg-card border border-accent rounded-xl p-6">
+                        <h3 class="font-bold text-lg">🔗 Integración BDR con NoSQL</h3>
+                        <p class="text-sm text-accent-2">Conexión o modelado de una parte del sistema en NoSQL.</p>
+                    </div>
+                     <div class="bg-card border-2 border-accent-1 rounded-xl p-6 md:col-span-2">
+                        <h3 class="font-bold text-lg text-accent-1">🛡️ Plan de Protección y Respaldo</h3>
+                        <p class="text-sm text-accent-2">Estrategia documentada para la seguridad, respaldo y recuperación de los datos.</p>
+                    </div>
+                 </div>
+            </section>
+        </div>
+
+        <!-- Slide 15: Footer (Final Slide) -->
+        <div class="slide-container" id="slide-14">
+            <footer class="text-center w-full max-w-4xl mx-auto">
+                <p class="text-accent-2 pt-8 border-t border-accent">Plan Pedagógico para la asignatura de Administración de Bases de Datos.</p>
+                <p class="text-sm mt-1">Ingeniería de Sistemas</p>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="navigation-controls">
+        <button id="prevSlide" class="px-6 py-3 bg-accent-1 text-black rounded-lg font-semibold hover:bg-opacity-80 transition-colors">Anterior</button>
+        <span id="slideCounter" class="text-xl font-bold text-accent-1 px-4 py-3 rounded-lg bg-card">1 / 15</span>
+        <button id="nextSlide" class="px-6 py-3 bg-accent-1 text-black rounded-lg font-semibold hover:bg-opacity-80 transition-colors">Siguiente</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide-container');
+        const totalSlides = slides.length;
+        const slideCounter = document.getElementById('slideCounter');
+        const prevButton = document.getElementById('prevSlide');
+        const nextButton = document.getElementById('nextSlide');
+
+        const updateSlideDisplay = () => {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        };
+
+        const goToNextSlide = () => {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlideDisplay();
+                // Re-render charts if they are on the newly active slide
+                if (currentSlide === 3) initHoursDistributionChart();
+                if (currentSlide === 6) initUnitHoursChart();
+            }
+        };
+
+        const goToPrevSlide = () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlideDisplay();
+                // Re-render charts if they are on the newly active slide
+                if (currentSlide === 3) initHoursDistributionChart();
+                if (currentSlide === 6) initUnitHoursChart();
+            }
+        };
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                goToNextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                goToPrevSlide();
+            }
+        });
+
+        // Button navigation
+        prevButton.addEventListener('click', goToPrevSlide);
+        nextButton.addEventListener('click', goToNextSlide);
+
+        // Chart.js specific functions for re-rendering if needed
+        let hoursChartInstance = null;
+        let unitHoursChartInstance = null;
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+
+        const initHoursDistributionChart = () => {
+            if (hoursChartInstance) hoursChartInstance.destroy(); // Destroy previous instance if exists
+            const hoursCtx = document.getElementById('hoursDistributionChart').getContext('2d');
+            hoursChartInstance = new Chart(hoursCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Acompañamiento Directo (AD)', 'Trabajo Independiente (TI)'],
+                    datasets: [{
+                        label: 'Distribución de Horas',
+                        data: [80, 112],
+                        backgroundColor: ['#1EE3CF', '#415A77'],
+                        borderColor: '#0D1B2A',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#E0E1DD',
+                                font: { size: 12 }
+                            },
+                            position: 'bottom'
+                        },
+                        tooltip: {
+                            callbacks: { title: tooltipTitleCallback }
+                        }
+                    }
+                }
+            });
+        };
+
+        const initUnitHoursChart = () => {
+            if (unitHoursChartInstance) unitHoursChartInstance.destroy(); // Destroy previous instance if exists
+            const unitHoursCtx = document.getElementById('unitHoursChart').getContext('2d');
+            const unitLabels = [
+                'Unidad 1: Almacenamiento y Acceso',
+                'Unidad 2: Gestión de Transacciones',
+                'Unidad 3: Seguridad y Restauración',
+                'Unidad 4: NoSQL',
+                'Unidad 5: Proyecto Final'
+            ];
+            unitHoursChartInstance = new Chart(unitHoursCtx, {
+                type: 'bar',
+                data: {
+                    labels: unitLabels.map(label => wrapLabel(label)),
+                    datasets: [
+                        {
+                            label: 'Acompañamiento Directo (AD)',
+                            data: [10, 30, 25, 10, 5],
+                            backgroundColor: '#1EE3CF',
+                            borderColor: '#1EE3CF',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Trabajo Independiente (TI)',
+                            data: [12, 36, 30, 12, 22],
+                            backgroundColor: '#415A77',
+                            borderColor: '#415A77',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            stacked: true,
+                            grid: { color: 'rgba(119, 141, 169, 0.2)' },
+                            ticks: { color: '#E0E1DD' }
+                        },
+                        y: {
+                            stacked: true,
+                            grid: { display: false },
+                            ticks: { color: '#E0E1DD' }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                           position: 'top',
+                           labels: {
+                               color: '#E0E1DD',
+                               font: { size: 14 }
+                           }
+                         },
+                        tooltip: { callbacks: { title: tooltipTitleCallback } }
+                    }
+                }
+            });
+        };
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            updateSlideDisplay();
+            initHoursDistributionChart(); // Initialize the first chart
+        });
+    </script>
+</body>
+</html>
