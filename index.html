@@ -66,12 +66,20 @@
         }
         .navigation-controls {
             position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 1.5rem; /* Slightly smaller bottom margin */
+            right: 1.5rem; /* Slightly smaller right margin */
             display: flex;
-            gap: 1rem;
+            gap: 0.25rem; /* Even smaller gap */
             z-index: 1000;
+            opacity: 0.75; /* Added transparency */
+        }
+        .navigation-controls button {
+            padding: 0.5rem 0.75rem; /* Smaller padding */
+            font-size: 0.75rem; /* Text size xs */
+        }
+        .navigation-controls span {
+            padding: 0.5rem 0.75rem; /* Matching padding */
+            font-size: 0.75rem; /* Matching text size */
         }
     </style>
 </head>
@@ -374,9 +382,9 @@
 
     <!-- Navigation Controls -->
     <div class="navigation-controls">
-        <button id="prevSlide" class="px-6 py-3 bg-accent-1 text-black rounded-lg font-semibold hover:bg-opacity-80 transition-colors">Anterior</button>
-        <span id="slideCounter" class="text-xl font-bold text-accent-1 px-4 py-3 rounded-lg bg-card">1 / 15</span>
-        <button id="nextSlide" class="px-6 py-3 bg-accent-1 text-black rounded-lg font-semibold hover:bg-opacity-80 transition-colors">Siguiente</button>
+        <button id="prevSlide" class="bg-accent-1 text-black rounded-lg font-semibold hover:bg-opacity-80 transition-colors">&lt;</button>
+        <span id="slideCounter" class="font-bold text-accent-1 rounded-lg bg-card">1 / 15</span>
+        <button id="nextSlide" class="bg-accent-1 text-black rounded-lg font-semibold hover:bg-opacity-80 transition-colors">&gt;</button>
     </div>
 
     <script>
