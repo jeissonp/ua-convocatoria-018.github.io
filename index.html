@@ -160,32 +160,32 @@
             </section>
         </div>
 
-        <!-- Slide 4: Overview (Carga Horaria, Créditos, Distribución del Trabajo - Chart) -->
+        <!-- Slide 4: Resultados de Aprendizaje Clave del Curso (Nueva Diapositiva) -->
         <div class="slide-container" id="slide-3">
-            <section id="overview" class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                <div class="md:col-span-1 bg-card border border-accent rounded-xl p-6 text-center">
-                    <h3 class="text-2xl font-bold mb-4">Carga Horaria Total</h3>
-                    <p class="text-6xl font-black gradient-text">192</p>
-                    <p class="text-accent-2">Horas Semestrales</p>
-                </div>
-                <div class="md:col-span-1 bg-card border border-accent rounded-xl p-6 text-center">
-                    <h3 class="text-2xl font-bold mb-4">Créditos Académicos</h3>
-                    <p class="text-6xl font-black gradient-text">4</p>
-                    <p class="text-accent-2">Créditos</p>
-                </div>
-                <div class="md:col-span-1 bg-card border border-accent rounded-xl p-6">
-                    <h3 class="text-2xl font-bold text-center mb-4">Distribución del Trabajo</h3>
-                    <div class="chart-container" style="height: 200px;">
-                        <canvas id="hoursDistributionChart"></canvas>
-                    </div>
+            <section id="resultados-aprendizaje" class="w-full max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Resultados de Aprendizaje Clave del Curso</h2>
+                <div class="bg-card border border-accent rounded-xl p-6 md:p-8 text-center shadow-2xl">
+                    <p class="text-md text-accent-2 leading-relaxed">
+                        Al finalizar el curso, los estudiantes serán capaces de:
+                    </p>
+                    <ul class="list-disc list-inside text-left mx-auto max-w-2xl mt-4 space-y-2 text-accent-2 text-md">
+                        <li>Planear, diseñar e implementar la organización de almacenamiento y construcción de índices.</li>
+                        <li>Identificar y usar tareas de procesamiento y optimización de consultas SQL.</li>
+                        <li>Aplicar transacciones para garantizar la consistencia.</li>
+                        <li>Implementar procedimientos almacenados y disparadores.</li>
+                        <li>Conocer y usar herramientas de seguridad.</li>
+                        <li>Establecer estrategias de respaldo y recuperación.</li>
+                        <li>Conocer las características de productos NoSQL.</li>
+                        <li>Desarrollar una base de datos completa aplicando todos los conceptos.</li>
+                    </ul>
                 </div>
             </section>
         </div>
 
-        <!-- Slide 5: Metodología: Acompañamiento Directo (AD) -->
+        <!-- Slide 5: Estrategias Pedagógicas: Acompañamiento Directo (AD) -->
         <div class="slide-container" id="slide-4">
             <section id="metodologia-ad" class="w-full max-w-3xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">ESTRATEGIAS METODOLÓGICAS</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Estrategias Pedagógicas</h2>
                 <div class="bg-card border border-accent rounded-xl p-6">
                     <h3 class="text-2xl font-bold text-accent-1 mb-4">👨‍🏫 Acompañamiento Directo (AD)</h3>
                     <p class="mb-4 text-accent-2">Actividades fundamentales para el desarrollo de las clases, estimulando la participación activa y la verificación del aprendizaje.</p>
@@ -200,10 +200,10 @@
             </section>
         </div>
 
-        <!-- Slide 6: Metodología: Trabajo Independiente (TI) -->
+        <!-- Slide 6: Estrategias Pedagógicas: Trabajo Independiente (TI) -->
         <div class="slide-container" id="slide-5">
             <section id="metodologia-ti" class="w-full max-w-3xl mx-auto">
-                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">ESTRATEGIAS METODOLÓGICAS</h2>
+                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Estrategias Pedagógicas</h2>
                 <div class="bg-card border border-accent rounded-xl p-6">
                     <h3 class="text-2xl font-bold text-accent-1 mb-4">📚 Trabajo Independiente (TI)</h3>
                     <p class="mb-4 text-accent-2">Actividades que afianzan el aprendizaje significativo y promueven la autonomía del estudiante en la aplicación de conocimientos.</p>
@@ -217,102 +217,25 @@
                 </div>
             </section>
         </div>
-        
-        <!-- Slide 7: Recorrido por las Unidades (Chart) -->
+
+        <!-- Slide 7: Unidades Temáticas -->
         <div class="slide-container" id="slide-6">
-            <section id="unidades-chart" class="w-full max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Recorrido por las Unidades del Programa</h2>
-                <div class="bg-card border border-accent rounded-xl p-6 md:p-8">
-                    <h3 class="text-xl md:text-2xl font-bold text-center mb-4">Distribución de Horas por Unidad</h3>
-                    <div class="chart-container">
-                        <canvas id="unitHoursChart"></canvas>
-                    </div>
+            <section id="unidades-list" class="w-full max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Unidades Temáticas del Programa</h2>
+                <div class="bg-card border border-accent rounded-xl p-6 md:p-8 shadow-2xl">
+                    <ul class="list-decimal list-inside space-y-3 text-lg md:text-xl text-accent-2">
+                        <li>**Unidad 1:** Almacenamiento de datos y métodos de acceso</li>
+                        <li>**Unidad 2:** Gestión de transacciones</li>
+                        <li>**Unidad 3:** Seguridad y restauración de Bases de datos</li>
+                        <li>**Unidad 4:** NoSQL</li>
+                        <li>**Unidad 5:** PROYECTO FINAL DE CLASE</li>
+                    </ul>
                 </div>
             </section>
         </div>
-
-        <!-- Slide 8: Unidad 1 -->
+        
+        <!-- Slide 8: Estrategias de Evaluación -->
         <div class="slide-container" id="slide-7">
-            <section id="unidad-1" class="w-full max-w-3xl mx-auto">
-                <div class="bg-card border border-accent rounded-xl p-6 flex flex-col">
-                    <h3 class="text-xl font-bold text-accent-1 unit-title">Unidad 1: Almacenamiento y Acceso</h3>
-                    <p class="text-sm text-accent-2 mb-4 unit-time">(Semanas 1-2 | 22 Horas)</p>
-                    <p class="flex-grow unit-description">Organización de estructuras lógicas, índices y optimización de consultas SQL para un acceso eficiente a la información.</p>
-                    <h4 class="text-lg font-bold text-accent-1 mt-4 mb-2">Resultados de Aprendizaje:</h4>
-                    <ul class="list-disc list-inside space-y-1 text-sm text-accent-2">
-                        <li>Planea, diseña e implementa la organización del almacenamiento en disco y la construcción de índices.</li>
-                        <li>Identifica y usa las tareas de procesamiento y de optimización de consultas realizadas por un SGBD.</li>
-                        <li>Implementa consultas de acuerdo con estrategias de procesamiento y optimización, utilizando lenguaje SQL.</li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-
-        <!-- Slide 9: Unidad 2 -->
-        <div class="slide-container" id="slide-8">
-            <section id="unidad-2" class="w-full max-w-3xl mx-auto">
-                <div class="bg-card border border-accent rounded-xl p-6 flex flex-col">
-                    <h3 class="text-xl font-bold text-accent-1 unit-title">Unidad 2: Gestión de Transacciones</h3>
-                    <p class="text-sm text-accent-2 mb-4 unit-time">(Semanas 3-8 | 66 Horas)</p>
-                    <p class="flex-grow unit-description">Aplicación de propiedades ACID, control de concurrencia y programación procedural (PL/SQL) para garantizar la consistencia y automatizar tareas.</p>
-                    <h4 class="text-lg font-bold text-accent-1 mt-4 mb-2">Resultados de Aprendizaje:</h4>
-                    <ul class="list-disc list-inside space-y-1 text-sm text-accent-2">
-                        <li>Aplica transacciones para garantizar la consistencia de la base de datos.</li>
-                        <li>Implementa procedimientos almacenados y disparadores en la base de datos creada.</li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-
-        <!-- Slide 10: Unidad 3 -->
-        <div class="slide-container" id="slide-9">
-            <section id="unidad-3" class="w-full max-w-3xl mx-auto">
-                <div class="bg-card border border-accent rounded-xl p-6 flex flex-col">
-                    <h3 class="text-xl font-bold text-accent-1 unit-title">Unidad 3: Seguridad y Restauración</h3>
-                    <p class="text-sm text-accent-2 mb-4 unit-time">(Semanas 9-13 | 55 Horas)</p>
-                    <p class="flex-grow unit-description">Implementación de métodos de control de acceso, auditorías y estrategias de respaldo y recuperación para proteger los datos.</p>
-                    <h4 class="text-lg font-bold text-accent-1 mt-4 mb-2">Resultados de Aprendizaje:</h4>
-                    <ul class="list-disc list-inside space-y-1 text-sm text-accent-2">
-                        <li>Conoce y usa las herramientas y funciones para el manejo de seguridad en un SGBD.</li>
-                        <li>Establece estrategias para desarrollar el respaldo y recuperación de datos.</li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-
-        <!-- Slide 11: Unidad 4 -->
-        <div class="slide-container" id="slide-10">
-            <section id="unidad-4" class="w-full max-w-3xl mx-auto">
-                <div class="bg-card border border-accent rounded-xl p-6 flex flex-col">
-                    <h3 class="text-xl font-bold text-accent-1 unit-title">Unidad 4: NoSQL</h3>
-                    <p class="text-sm text-accent-2 mb-4 unit-time">(Semanas 14-15 | 22 Horas)</p>
-                    <p class="flex-grow unit-description">Exploración de bases de datos no relacionales, con foco en sistemas orientados a documentos como MongoDB.</p>
-                    <h4 class="text-lg font-bold text-accent-1 mt-4 mb-2">Resultados de Aprendizaje:</h4>
-                    <ul class="list-disc list-inside space-y-1 text-sm text-accent-2">
-                        <li>Conoce las características principales y el funcionamiento de un producto NoSQL.</li>
-                        <li>Diseña un modelo de datos a partir de una situación real, estableciendo cada una de los conceptos desarrollados en la asignatura.</li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-
-        <!-- Slide 12: Unidad 5 -->
-        <div class="slide-container" id="slide-11">
-            <section id="unidad-5" class="w-full max-w-3xl mx-auto">
-                 <div class="bg-card border-2 border-accent-1 rounded-xl p-6 flex flex-col shadow-2xl">
-                    <h3 class="text-xl font-bold text-accent-1 unit-title">Unidad 5: Proyecto Final de Clase</h3>
-                    <p class="text-sm text-accent-2 mb-4 unit-time">(Semana 16 | 27 Horas)</p>
-                    <p class="flex-grow unit-description">Aplicación integral de todos los conceptos del curso en el desarrollo de una base de datos completa, desde el diseño hasta la implementación y protección.</p>
-                    <h4 class="text-lg font-bold text-accent-1 mt-4 mb-2">Resultados de Aprendizaje:</h4>
-                    <ul class="list-disc list-inside space-y-1 text-sm text-accent-2">
-                        <li>Desarrolla una base de datos, aplicando los conceptos vistos en clase, siguiendo los parámetros solicitados.</li>
-                    </ul>
-                </div>
-            </section>
-        </div>
-
-        <!-- Slide 13: Estrategias de Evaluación -->
-        <div class="slide-container" id="slide-12">
             <section id="evaluacion" class="w-full max-w-4xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Estrategias de Evaluación</h2>
                 <p class="text-center max-w-3xl mx-auto mb-8 text-accent-2">La evaluación es un proceso continuo y diversificado, diseñado para medir el desarrollo progresivo de las competencias del estudiante a través de múltiples evidencias de aprendizaje.</p>
@@ -341,8 +264,8 @@
             </section>
         </div>
 
-        <!-- Slide 14: Entregables del Proyecto Final -->
-        <div class="slide-container" id="slide-13">
+        <!-- Slide 9: Entregables del Proyecto Final -->
+        <div class="slide-container" id="slide-8">
             <section id="proyecto-final" class="w-full max-w-4xl mx-auto">
                  <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Entregables del Proyecto Final</h2>
                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -370,20 +293,12 @@
             </section>
         </div>
 
-        <!-- Slide 15: Footer (Final Slide) -->
-        <div class="slide-container" id="slide-14">
-            <footer class="text-center w-full max-w-4xl mx-auto">
-                <p class="text-accent-2 pt-8 border-t border-accent">Plan Pedagógico para la asignatura de Administración de Bases de Datos.</p>
-                <p class="text-sm mt-1">Ingeniería de Sistemas</p>
-            </footer>
-        </div>
-
     </div>
 
     <!-- Navigation Controls -->
     <div class="navigation-controls">
         <button id="prevSlide" class="bg-accent-1 text-black rounded-lg font-semibold hover:bg-opacity-80 transition-colors">&lt;</button>
-        <span id="slideCounter" class="font-bold text-accent-1 rounded-lg bg-card">1 / 15</span>
+        <span id="slideCounter" class="font-bold text-accent-1 rounded-lg bg-card">1 / 9</span>
         <button id="nextSlide" class="bg-accent-1 text-black rounded-lg font-semibold hover:bg-opacity-80 transition-colors">&gt;</button>
     </div>
 
@@ -410,9 +325,6 @@
             if (currentSlide < totalSlides - 1) {
                 currentSlide++;
                 updateSlideDisplay();
-                // Re-render charts if they are on the newly active slide
-                if (currentSlide === 3) initHoursDistributionChart();
-                if (currentSlide === 6) initUnitHoursChart();
             }
         };
 
@@ -420,9 +332,6 @@
             if (currentSlide > 0) {
                 currentSlide--;
                 updateSlideDisplay();
-                // Re-render charts if they are on the newly active slide
-                if (currentSlide === 3) initHoursDistributionChart();
-                if (currentSlide === 6) initUnitHoursChart();
             }
         };
 
@@ -439,141 +348,9 @@
         prevButton.addEventListener('click', goToPrevSlide);
         nextButton.addEventListener('click', goToNextSlide);
 
-        // Chart.js specific functions for re-rendering if needed
-        let hoursChartInstance = null;
-        let unitHoursChartInstance = null;
-
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-                return label.join(' ');
-            } else {
-                return label;
-            }
-        };
-
-        const wrapLabel = (label, maxWidth = 16) => {
-            if (label.length <= maxWidth) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + ' ' + word).trim().length > maxWidth) {
-                    lines.push(currentLine.trim());
-                    currentLine = word;
-                } else {
-                    currentLine = (currentLine + ' ' + word).trim();
-                }
-            }
-            if (currentLine) {
-                lines.push(currentLine.trim());
-            }
-            return lines;
-        };
-
-        const initHoursDistributionChart = () => {
-            if (hoursChartInstance) hoursChartInstance.destroy(); // Destroy previous instance if exists
-            const hoursCtx = document.getElementById('hoursDistributionChart').getContext('2d');
-            hoursChartInstance = new Chart(hoursCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Acompañamiento Directo (AD)', 'Trabajo Independiente (TI)'],
-                    datasets: [{
-                        label: 'Distribución de Horas',
-                        data: [80, 112],
-                        backgroundColor: ['#1EE3CF', '#415A77'],
-                        borderColor: '#0D1B2A',
-                        borderWidth: 4,
-                        hoverOffset: 8
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            labels: {
-                                color: '#E0E1DD',
-                                font: { size: 12 }
-                            },
-                            position: 'bottom'
-                        },
-                        tooltip: {
-                            callbacks: { title: tooltipTitleCallback }
-                        }
-                    }
-                }
-            });
-        };
-
-        const initUnitHoursChart = () => {
-            if (unitHoursChartInstance) unitHoursChartInstance.destroy(); // Destroy previous instance if exists
-            const unitHoursCtx = document.getElementById('unitHoursChart').getContext('2d');
-            const unitLabels = [
-                'Unidad 1: Almacenamiento y Acceso',
-                'Unidad 2: Gestión de Transacciones',
-                'Unidad 3: Seguridad y Restauración',
-                'Unidad 4: NoSQL',
-                'Unidad 5: Proyecto Final'
-            ];
-            unitHoursChartInstance = new Chart(unitHoursCtx, {
-                type: 'bar',
-                data: {
-                    labels: unitLabels.map(label => wrapLabel(label)),
-                    datasets: [
-                        {
-                            label: 'Acompañamiento Directo (AD)',
-                            data: [10, 30, 25, 10, 5],
-                            backgroundColor: '#1EE3CF',
-                            borderColor: '#1EE3CF',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Trabajo Independiente (TI)',
-                            data: [12, 36, 30, 12, 22],
-                            backgroundColor: '#415A77',
-                            borderColor: '#415A77',
-                            borderWidth: 1
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    indexAxis: 'y',
-                    scales: {
-                        x: {
-                            stacked: true,
-                            grid: { color: 'rgba(119, 141, 169, 0.2)' },
-                            ticks: { color: '#E0E1DD' }
-                        },
-                        y: {
-                            stacked: true,
-                            grid: { display: false },
-                            ticks: { color: '#E0E1DD' }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                           position: 'top',
-                           labels: {
-                               color: '#E0E1DD',
-                               font: { size: 14 }
-                           }
-                         },
-                        tooltip: { callbacks: { title: tooltipTitleCallback } }
-                    }
-                }
-            });
-        };
-
         // Initial setup
         document.addEventListener('DOMContentLoaded', () => {
             updateSlideDisplay();
-            initHoursDistributionChart(); // Initialize the first chart
         });
     </script>
 </body>
